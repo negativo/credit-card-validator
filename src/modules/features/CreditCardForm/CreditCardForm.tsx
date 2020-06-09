@@ -23,6 +23,12 @@ const getMaskedInput = (value: string) => {
     .replace(/(.{4})/g, '$1 ')
     .trim();
 };
+
+// Lengths considering the added spaces.
+const CARDS_MAX_LENGTH = 19;
+const CARDS_MIN_LENGTH = 17;
+const CARDS_IDENTIFY_MIN_LENGTH = 3;
+
 export const CreditCardForm: React.StatelessComponent = ({ children }) => {
   const [cardNumber, setCardNumber] = useState('');
   const cardBrand = getCardBrand(cardNumber);
@@ -31,7 +37,7 @@ export const CreditCardForm: React.StatelessComponent = ({ children }) => {
     <FormContainer>
       <TextInput
         onChange={(e: React.FormEvent<HTMLInputElement>) => {
-          if (e.currentTarget.value.length > 19) {
+          if (e.currentTarget.value.length > CARDS_MAX_LENGTH) {
             return false;
           }
           const value = getMaskedInput(e.currentTarget.value);
@@ -43,11 +49,21 @@ export const CreditCardForm: React.StatelessComponent = ({ children }) => {
         value={cardNumber}
       />
 
-      {cardNumber && cardNumber.length > 17 && !isCreditCardValid && (
-        <Label type={LabelType.Error}>
-          Credit Card number is invalid. Please check it and try again!
-        </Label>
-      )}
+      {cardNumber &&
+        cardNumber.length > CARDS_IDENTIFY_MIN_LENGTH &&
+        cardNumber.length < CARDS_MAX_LENGTH - 1 &&
+        !cardBrand && (
+          <Label type={LabelType.Error}>
+            Unknown Credit Card provider. Please check it and try again!
+          </Label>
+        )}
+      {cardNumber &&
+        cardNumber.length > CARDS_MIN_LENGTH &&
+        !isCreditCardValid && (
+          <Label type={LabelType.Error}>
+            Credit Card number is invalid. Please check it and try again!
+          </Label>
+        )}
       <Button disabled={!isCreditCardValid}>Submit</Button>
     </FormContainer>
   );

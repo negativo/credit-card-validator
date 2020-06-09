@@ -5,7 +5,8 @@ exports[`renders correctly with Label 1`] = `
   className="sc-AxirZ fSNuUs"
 >
   <div
-    className="sc-AxjAm cTPVRV"
+    className="sc-AxjAm eMwonu"
+    type="primary"
   >
     test label
   </div>
@@ -21,7 +22,8 @@ exports[`renders correctly with props 1`] = `
   className="sc-AxirZ fSNuUs"
 >
   <div
-    className="sc-AxjAm cTPVRV"
+    className="sc-AxjAm eMwonu"
+    type="primary"
   />
   <input
     className="sc-AxiKw ckEfbS"
@@ -35,7 +37,8 @@ exports[`renders correctly with props 2`] = `
   className="sc-AxirZ fSNuUs"
 >
   <div
-    className="sc-AxjAm cTPVRV"
+    className="sc-AxjAm eMwonu"
+    type="primary"
   >
     test props
   </div>

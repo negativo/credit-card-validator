@@ -8,7 +8,8 @@ exports[`renders correctly 1`] = `
     className="sc-AxirZ fSNuUs"
   >
     <div
-      className="sc-AxjAm cTPVRV"
+      className="sc-AxjAm eMwonu"
+      type="primary"
     >
       Card Number
     </div>
@@ -19,7 +20,8 @@ exports[`renders correctly 1`] = `
       value=""
     />
   </div>
-  <p />
+  
+  
   <div
     className="sc-AxhUy cRhGhy"
     disabled={true}

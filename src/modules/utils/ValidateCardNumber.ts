@@ -44,12 +44,12 @@ const luhnReducer = (
 };
 
 const isKnownCreditCard = (card: string): boolean => {
-  return rules.some(brand => brand.rule.test(card));
+  return rules.some(brand => brand.validityRule.test(card));
 };
 
 export const getCardBrand = (card: string): Brand | undefined => {
   const cardValue = card.replace(/ /g, '');
-  return rules.find(brand => brand.rule.test(cardValue));
+  return rules.find(brand => brand.identifierRule.test(cardValue));
 };
 
 export const isCardValid = (card: string): boolean => {
