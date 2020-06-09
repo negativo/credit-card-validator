@@ -14,6 +14,17 @@ The source is divided into modules:
 - a Utils module with the helper functions to validate the credit card
 - a Features module with the CreditCardForm component that tie logic and UI together.
 
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  npm install -g serve
+  serve -s build
+
+or 
+
+  cd build
+  php -S lolcahost:3000
+
 
 ## Available Scripts
 
