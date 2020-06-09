@@ -2,7 +2,7 @@
  * list of supported credit cards with RegExp rule to
  * validate the provided value.
  * It could be extended to allow adding an 'image' key to
- * add the logo for each brand.
+ * add the logo for each brand, and of course more card brands.
  */
 
 export interface Brand {
