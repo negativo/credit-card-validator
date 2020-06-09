@@ -8,7 +8,7 @@ It includes a very simple UI with an Input field for the card number,
 a more complete solution should include the CVV code, the expiration date and
 the card holder.
 
-The source is divided in modules: 
+The source is divided into modules: 
 
 - a UI kit with the stateless graphic components
 - a Utils module with the helper functions to validate the credit card
