@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { FormContainer, TextInput, Button } from '../../UI/components';
+import {
+  FormContainer,
+  TextInput,
+  Button,
+  Label,
+  LabelType,
+} from '../../UI/components';
 
 import { isCardValid, getCardBrand } from '../../utils';
 
@@ -20,6 +26,7 @@ const getMaskedInput = (value: string) => {
 export const CreditCardForm: React.StatelessComponent = ({ children }) => {
   const [cardNumber, setCardNumber] = useState('');
   const cardBrand = getCardBrand(cardNumber);
+  const isCreditCardValid = isCardValid(cardNumber);
   return (
     <FormContainer>
       <TextInput
@@ -33,12 +40,16 @@ export const CreditCardForm: React.StatelessComponent = ({ children }) => {
           setCardNumber(value);
         }}
         label={`Card Number${cardBrand ? ': ' + cardBrand.name : ''}`}
-        isValid={cardNumber ? isCardValid(cardNumber) : false}
+        isValid={cardNumber ? isCreditCardValid : false}
         value={cardNumber}
       />
 
-      <p />
-      <Button disabled={!isCardValid(cardNumber)}>Submit</Button>
+      {cardNumber && cardNumber.length > 17 && !isCreditCardValid && (
+        <Label type={LabelType.Error}>
+          Credit Card number is invalid. Please check it and try again!
+        </Label>
+      )}
+      <Button disabled={!isCreditCardValid}>Submit</Button>
     </FormContainer>
   );
 };
