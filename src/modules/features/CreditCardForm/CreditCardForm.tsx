@@ -31,7 +31,6 @@ export const CreditCardForm: React.StatelessComponent = ({ children }) => {
     <FormContainer>
       <TextInput
         onChange={(e: React.FormEvent<HTMLInputElement>) => {
-          // Allow only numbers and Insert space every 4 chars
           if (e.currentTarget.value.length > 19) {
             return false;
           }
