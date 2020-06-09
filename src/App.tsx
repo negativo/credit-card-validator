@@ -1,19 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import { isCardValid, getCardBrand } from './modules/utils/index';
+import { CreditCardForm } from './modules/features';
 
 function App() {
-  const [cardNumber, setCardNumber] = useState('');
-  const cardBrand = getCardBrand(cardNumber);
   return (
     <div className="App">
       <header className="App-header">
-        <input
-          type="text"
-          onChange={e => setCardNumber(e.currentTarget.value)}
-        />
-        <p>{cardNumber && isCardValid(cardNumber).toString()}</p>
-        <p>{cardBrand && cardBrand.name}</p>
+        <CreditCardForm />
       </header>
     </div>
   );

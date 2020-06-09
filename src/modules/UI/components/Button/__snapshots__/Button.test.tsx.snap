@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with props 1`] = `
+<div
+  className="sc-AxjAm gRUtaw"
+  disabled={true}
+>
+  Test Button
+</div>
+`;
+
+exports[`renders correctly without props 1`] = `
+<div
+  className="sc-AxjAm cLLNJw"
+>
+  Test Button
+</div>
+`;

@@ -27,14 +27,16 @@ const isKnownCreditCard = (card: string): boolean => {
 };
 
 export const getCardBrand = (card: string): Brand | undefined => {
-  return rules.find(brand => brand.rule.test(card));
+  const cardValue = card.replace(/ /g, '');
+  return rules.find(brand => brand.rule.test(cardValue));
 };
 
 export const isCardValid = (card: string): boolean => {
-  if (!isKnownCreditCard(card)) {
+  const cardValue = card.replace(/ /g, '');
+  if (!isKnownCreditCard(cardValue)) {
     return false;
   }
-  return prepareForValidation(card).reduce(luhnReducer) % 10 === 0
-    ? true
-    : false;
+
+  const preparedCard = prepareForValidation(cardValue);
+  return preparedCard.reduce(luhnReducer) % 10 === 0 ? true : false;
 };

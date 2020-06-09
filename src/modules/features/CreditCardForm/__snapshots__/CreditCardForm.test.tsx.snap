@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="sc-AxhCb oChfx"
+>
+  <div
+    className="sc-AxirZ fSNuUs"
+  >
+    <div
+      className="sc-AxjAm cTPVRV"
+    >
+      Card Number
+    </div>
+    <input
+      className="sc-AxiKw ckEfbS"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+  </div>
+  <p />
+  <div
+    className="sc-AxhUy cRhGhy"
+    disabled={true}
+  >
+    Submit
+  </div>
+</div>
+`;

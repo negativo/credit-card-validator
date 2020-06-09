@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with Label 1`] = `
+<div
+  className="sc-AxirZ fSNuUs"
+>
+  <div
+    className="sc-AxjAm cTPVRV"
+  >
+    test label
+  </div>
+  <input
+    className="sc-AxiKw ckEfbS"
+    type="text"
+  />
+</div>
+`;
+
+exports[`renders correctly with props 1`] = `
+<div
+  className="sc-AxirZ fSNuUs"
+>
+  <div
+    className="sc-AxjAm cTPVRV"
+  />
+  <input
+    className="sc-AxiKw ckEfbS"
+    type="text"
+  />
+</div>
+`;
+
+exports[`renders correctly with props 2`] = `
+<div
+  className="sc-AxirZ fSNuUs"
+>
+  <div
+    className="sc-AxjAm cTPVRV"
+  >
+    test props
+  </div>
+  <input
+    className="sc-AxiKw gMeQUp"
+    onChange={[Function]}
+    type="text"
+    value="test value"
+  />
+</div>
+`;
