@@ -26,7 +26,7 @@ or
 
 ```
 cd build
-php -S lolcahost:3000
+php -S localhost:3000
 ```
 
 
